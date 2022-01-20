@@ -1,22 +1,133 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>My New Hugo Site</title>
+    <title>My Blog</title>
     <link>https://lyrace.github.io/</link>
-    <description>Recent content on My New Hugo Site</description>
+    <description>Recent content on My Blog</description>
+    <image>
+      <url>https://lyrace.github.io/papermod-cover.png</url>
+      <link>https://lyrace.github.io/papermod-cover.png</link>
+    </image>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Thu, 20 Jan 2022 23:05:31 +0800</lastBuildDate><atom:link href="https://lyrace.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 21 Jan 2022 00:43:56 +0800</lastBuildDate><atom:link href="https://lyrace.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>First</title>
-      <link>https://lyrace.github.io/post/first/</link>
-      <pubDate>Thu, 20 Jan 2022 23:05:31 +0800</pubDate>
+      <title>【Java笔记】10 递归</title>
+      <link>https://lyrace.github.io/post/java10/</link>
+      <pubDate>Fri, 21 Jan 2022 00:43:56 +0800</pubDate>
       
-      <guid>https://lyrace.github.io/post/first/</guid>
-      <description>这是我的第一篇blog
- 测试一下
- </description>
+      <guid>https://lyrace.github.io/post/java10/</guid>
+      <description>【Java笔记】10 递归 猴子吃桃 有一堆桃子，猴子第一天吃了其中的一半，并再多吃了一个。以后每天猴子都吃其中的一半，然后再多吃一个。当到第10天时，想再吃时，发现只有一个桃子了。问：最初共多少个桃子？
+public calss Recursion{ public static void main(String[] args){ T t1 = new T(); int day = 0; int peachNum = t1.peach(day); if(peachNum != -1){ System.out.println(&amp;#34;第&amp;#34;+day+&amp;#34;天有&amp;#34;+peachNum+&amp;#34;个桃子&amp;#34;); } } } class T{ /* 1.day=10时 有1个桃子 2.day=9时 有(day10+1)*2=4 3.day=8时 有(day9+1)*2=10 前一天的桃子=(后一天的桃子+1)*2 */ public int peach(int day){ if(day == 10){//第10天，只有1个桃  return 1; }else if(day &amp;gt;= 1&amp;amp;&amp;amp;day &amp;lt;= 9){ return (peach(day+1)+1)*2; }else{ System.out.println(&amp;#34;day在1-10&amp;#34;); return -1; } } } 迷宫问题 public class MiGong{ public static void main(String[] args){ //先创建迷宫，用二维数组表示 int[][] map=new int[8][7]; 	//先规定map数组的元素值：0表示可以走 1表示障碍物 	int[][] map = new int[8][7]; //设置障碍物 	for(int i = 0;i &amp;lt; 7;i++){ map[0][i] = 1; map[7][i] = 1; } for(int i = 0;i &amp;lt; 8;i++){ map[i][0] = 1; map[i][6] = 1; } //输出当前的地图 	System.</description>
     </item>
+    
+    <item>
+      <title>【Java笔记】09 面向对象</title>
+      <link>https://lyrace.github.io/post/java9/</link>
+      <pubDate>Fri, 21 Jan 2022 00:43:49 +0800</pubDate>
+      
+      <guid>https://lyrace.github.io/post/java9/</guid>
+      <description>【Java笔记】09 面向对象 一、类与对象  属性 成员属性=属性=field	访问修饰符 属性类型 属性名； 访问修饰符：public protected 默认 private 属性不赋值有默认值，跟数组默认值相同 方法（成员方法） 当程序执行到方法时，开辟一个独立的栈空间； 执行完毕，或者到return语句时，返回； 返回到调用方法的语句，继续执行后面的代码 方法的定义： 访问修饰符 返回数据类型 方法名（形参列表..）{//方法体 语句； return 返回值； }  同一个类中的方法调用，直接调用即可，不需要创建对象
+class A{ //同一个类中的方法调用，直接调用即可，不需要创建对象 	pubilc void print(int n){ System.out.println(&amp;#34;输出&amp;#34;); } public void test(){ print(); } } 跨类中的方法调用：A类调用B类方法，需要通过对象名调用。即创建B类的对象，再调用方法
+二、方法重载 java中允许同一个类中，多个同名方法的存在，但要求形参列表不一致 方法名：必须相同 形参列表：必须不同（形参类型或个数或顺序，至少有一样不同，参数名无要求） 返回类型：无要求
+三、可变参数 java允许将同一个类中多个同名同功能但参数个数不同的方法，封装成一个方法 可变参数的实参可以为0个或任意多个 可变参数的实参可以为数组 可变参数的本质就是数组 可变参数可以和普通类型的参数一起放在形参列表，但必须保证可变参数在最后 一个形参列表中最多只能出现一个可变参数
+public class VarParameter{ public static void main(String[] args){ //求2个、3个、4个...参数的和 	HspMethod m = new HspMethod(); System.</description>
+    </item>
+    
+    <item>
+      <title>【Java笔记】08数组</title>
+      <link>https://lyrace.github.io/post/java8/</link>
+      <pubDate>Fri, 21 Jan 2022 00:43:44 +0800</pubDate>
+      
+      <guid>https://lyrace.github.io/post/java8/</guid>
+      <description>【Java笔记】08数组 一、介绍 数组存放多个同一类型的数据，是引用类型
+ 数组的定义 数据类型[] 数组名 = new 数据类型[大小] int[] a = new int[5];  先声明，再创建 声明：数据类型 数组名[]；或 数据类型[] 数组名；此时为null 创建：数组名=new 数据类型[大小];
+静态初始化 数据类型 数组名[]={元素值，元素值,&amp;hellip;}
+ 注意 1.数组创建后，如果没有赋值，有默认值 int 0,short 0,byte 0,long 0 ,float 0.0,double 0.0,char \u0000,boolean false，String null 2.数组属引用类型，数组型数据是对象（object）  二、数组赋值机制 数组在默认情况下是引用传递，赋的值是地址——&amp;gt;赋值方式为引用传递
+//arr2变化会影响到arr1 	int[] arr1 = {1,2,3}; int[] arr2 = arr1; arr2[0] = 10; //arr1={10,2,3} 三、应用 排序  内部排序：所有数据加载到内存 外部排序：借助外部存储   冒泡排序 通过对待排序序列从后向前（从下标较大的元素开始），依次比较相邻元素 的值，若发现逆序则交换，使值较大的元素逐渐从前移向后部  //数组[24,69,80,57,13] //第一轮 最大数放最后 24,69,80,57,13-&amp;gt;24,69,80,57,13-&amp;gt;24,69,57,80,13-&amp;gt;24,69,57,13,80  //第二轮 第二大的数放在倒数第二位置 24,69,57,13,80-&amp;gt;24 57 69 13 80-&amp;gt;24 57 13 69 80  //第三轮 第三大的数放在倒数第三位置 24 57 13 69 80-&amp;gt;24 13 57 69 80  //第四轮 第四大的数放在倒数第四位置 13 24 57 69 80 public class BubbleSort { public static void main(String []args) { int[] arr = {24,69,80,57,13}; int temp = 0; for(int i=0;i&amp;lt;arr.</description>
+    </item>
+    
+    <item>
+      <title>【Java笔记】07 控制结构</title>
+      <link>https://lyrace.github.io/post/java7/</link>
+      <pubDate>Fri, 21 Jan 2022 00:43:38 +0800</pubDate>
+      
+      <guid>https://lyrace.github.io/post/java7/</guid>
+      <description>【Java笔记】07 控制结构 三大流程控制语句：顺序控制、分支控制、循环控制
+分支控制 switch 表达式数据类型，应和case后的常量类型一致，或者是可以自动转成可以相互比较的类型 switch（表达式）中表达式的返回值必须是byte,short,int,char,enum,String case子句中的值必须是常量，而不能是变量、
+//3，4，5月春季，6，7，8月夏季，9，10，11秋季，12，1，2月冬季 	Scanner myScanner = new Scanner(System.in); System.out.println(&amp;#34;输入月份&amp;#34;); int m = myScanner.nextInt(); switch(m){ case 3: case 4: case 5: System.out.println(&amp;#34;春季&amp;#34;); break; case 6: case 7: case 8: System.out.println(&amp;#34;夏季&amp;#34;); break; case 9: case 10: case 11: System.out.println(&amp;#34;秋季&amp;#34;); break; case 12: case 1: case 2: System.out.println(&amp;#34;冬季&amp;#34;); break; default: System.out.println(&amp;#34;输入的月份不对&amp;#34;); } break break语句出现在多层嵌套的语句块中，可以通过标签指明要终止的是哪一层语句块 continue语句出现在多层嵌套的语句块中，可以通过标签指明要终止的是哪一层语句块
+label1: for(int j=0;j&amp;lt;4;j++){ label2: for(int i=0;i&amp;lt;10;i++){ if(i == 2){ break lable1; } System.</description>
+    </item>
+    
+    <item>
+      <title>【Java笔记】06 进制</title>
+      <link>https://lyrace.github.io/post/java6/</link>
+      <pubDate>Fri, 21 Jan 2022 00:40:09 +0800</pubDate>
+      
+      <guid>https://lyrace.github.io/post/java6/</guid>
+      <description>【Java笔记】06 进制 一、四种进制 整数的四种表示方法： 1.二进制：0，1，满2进1，以0b或0B开头 2.十进制：0-9，满10进1 3.八进制：0-7，满8进1，以数字0开头表示 4.十六进制：0-15，满16进1，以0x或0X开头表示
+int n1 = 0b1010;//二进制，10 	int n2 = 1010;//十进制，1010 	int n3 = 01010;//八进制，01010 	int n4 = 0X10101//十六进制，0X10101 二、进制转换  十进制转二进制 除2取余，注意一个字节8位 34=0B0010 0010 十进制转八进制 除8取余，131=0203 十进制转十六进制 除16取余，237=0xED 二进制转八进制 低位开始，二进制数三位一组，转成八进制 0B11 010 101=&amp;gt;0 3 2 5 二进制转十六进制 低位开始，四位一组 0b1101 0101 =&amp;gt; 0x D 5  三、原码、反码、补码 对于有符号： 1.二进制的最高位是符号位，0表示整数，1表示负数 2.正数的原码、反码、补码都一样 3.负数的反码=原码符号位不变，其它位取反 4.负数的补码=反码+1，负数的反码=负数的补码-1 5.0的反码，补码都是0 6.Java没有无符号数 7.计算机都是以补码的方式运算的 8.看运算结果时，看原码
+四、位运算符  按位与&amp;amp;	两位全为1，结果为1，否则为0 2&amp;amp;3 1.2的原码=&amp;gt;00000000 00000000 00000000 00000010 2的补码=&amp;gt;00000000 00000000 00000000 00000010 2.</description>
+    </item>
+    
+    <item>
+      <title>【Java笔记】05 键盘输入</title>
+      <link>https://lyrace.github.io/post/java5/</link>
+      <pubDate>Fri, 21 Jan 2022 00:40:08 +0800</pubDate>
+      
+      <guid>https://lyrace.github.io/post/java5/</guid>
+      <description>【Java笔记】05 键盘输入 键盘输入语句 扫描器 Scanner	java.util.* 1.导入该类所在的包 2.创建Scanner对象
+import java.util.Scanner; public class Input{ public static void main(String[] args){ Scanner myScanner = new Scanner(System.in); //执行到next方法时，会等待用户输入 	String name = myScanner.next();//接收用户输入字符串 	int age = myScanner.nextInt(); double sal = myScanner.nextDouble(); } } </description>
+    </item>
+    
+    <item>
+      <title>【Java笔记】04 运算符</title>
+      <link>https://lyrace.github.io/post/java4/</link>
+      <pubDate>Fri, 21 Jan 2022 00:40:06 +0800</pubDate>
+      
+      <guid>https://lyrace.github.io/post/java4/</guid>
+      <description>【Java笔记】04 运算符 一、算数运算符 运算符：+（正号）、-（负号）、+、-、*、/、%、++、&amp;ndash;、 +（字符串相加） 1./
+System.out.println(10 / 4); //2 	System.out.println(10.0 / 4); //2.5 	double d = 10 / 4;//2.0 2.% 取模，取余 %运算， a % b = a - a / b * b 10%3=1	//10-10/33=1 -10%3=-1	//(-10)-(-10)/33=-1 10%-3=1	//10-10/(-3)(-3)=1 %运算，a是小数的情况下， a % b = a - (int)a / b * b -10.5%3 = -10.5 - (-10)/33 = -10.5+9=-1.5 3.++
+ 作为独立语句 i++;//自增，等价于 i=i+1； ++i;//自增，等价于i=i+1; 作为表达式使用 前++：++i先自增，后赋值 后++：i++先赋值，后自增  int i = 8; int k = ++i;//i=i+1;k=i; 	System.</description>
+    </item>
+    
+    <item>
+      <title>【Java笔记】03 变量</title>
+      <link>https://lyrace.github.io/post/java3/</link>
+      <pubDate>Fri, 21 Jan 2022 00:40:05 +0800</pubDate>
+      
+      <guid>https://lyrace.github.io/post/java3/</guid>
+      <description>【Java笔记】03 变量 一、变量基本  概念  变量是程序的基本组成单位，相当于内存中一个数据存储空间的表示，基本要素（类型、名称、值）
+ 步骤   声明变量 int a; 赋值 a=60; 使用 System.out.println(a);   注意事项 1.变量表示内存中的一个存储区域 2.该区域有名称和内存 3.先声明后使用 4.该区域的数据在同一类型范围内变化 5.变量在同一作用域不能重名  二、+的使用 1.左右都是数值型=&amp;gt;加法运算 2.左右两边有一方为字符串=&amp;gt;拼接运算
+System.out.println(100+98);//198 System.out.println(&amp;#34;100&amp;#34;+98);//10098 System.out.println(100+3+&amp;#34;hello&amp;#34;);//103hello System.out.println(&amp;#34;hello&amp;#34;+100+3);//hello1003 三、数据类型 1.基本数据类型
+ 数值型 整数类型，存放整数 byte(字节)[1],short[2],int[4],long[8] 浮点类型 float[4],double[8] 字符型 存放单个字符 char[2] 布尔型 存放true,false boolean[1] 2.引用数据类型 类 接口 数组  四、整数类型    类型 占用存储空间 范围     byte,字节 1字节 -128~127   short,短整型 2字节 -2^15^ ~ 2^15^-1，-32768~32767   int,整型 4字节 -2^31^ ~ 2^31^-1，-2147483648~2147483647   long,长整型 8字节 -2^63^ ~ 2^63^-1      坑  double num1 = 2.</description>
+    </item>
+    
+    <item>
+      <title>【Java笔记】02 DOS</title>
+      <link>https://lyrace.github.io/post/java2/</link>
+      <pubDate>Fri, 21 Jan 2022 00:40:04 +0800</pubDate>
+      
+      <guid>https://lyrace.github.io/post/java2/</guid>
+      <description>【Java笔记】02 DOS 一、DOS命令 Dos：Disk Operating System磁盘操作系统
+二、路径 相对路径：从当前目录开始定位形成的一个路径	..-&amp;gt;上一层 绝对路径：从顶级目录开始定位形成的一个路径
+三、常用的Dos命令 1.查看当前目录有什么内容 dir 路径 2.切换到其他盘 切换到c盘 cd \D c: 3.切换到当前盘的其他目录下、 cd d:\abc\test cd ....\abc\test 4.切换到上一级 cd .. 5.切换到根目录 cd 6.查看指定的目录下所有的子级目录 tree 7.清屏 cls 8.推出Dos exit 9.md[创建目录]，rd[删除目录]，copy[拷贝文件]，del[删除文件]，echo[输入内容到文件，echo hello &amp;gt; ok.txt],move[剪切/移动]</description>
+    </item>
+    
+    <item>
+      <title>【Java笔记】01 概述</title>
+      <link>https://lyrace.github.io/post/java1/</link>
+      <pubDate>Fri, 21 Jan 2022 00:34:50 +0800</pubDate>
+      
+      <guid>https://lyrace.github.io/post/java1/</guid>
+      <description>【Java笔记】01 概述 一、java特性 1.面向对象的（oop) 2.健壮的，由强制类型机制、异常处理、垃圾的自动收集等保证 3.跨平台性的，一个编译好的class文件可在多个操作系统下运行 4.解释性的 解释性：编译后的代码，不能直接被机器执行，需要解释器来执行,javascript,PHP,java 编译性：编译后的代码，可以直接被机器执行，c/c++
+二、java运行机制及运行过程 JVM让同一个java程序在三个不同的操作系统中都可以执行——&amp;gt;跨平台性 1.java核心机制——java虚拟机[JVM java virtual machine]
+ 基本介绍 1.JVM是一个虚拟的计算机，具有指令集并使用不同的存储区域。负责执行指令，管理数据、内存、寄存器，包含在JDK中 2.不同的平台有不同的虚拟机 3.虚拟机机制屏蔽了底层运行平台的差别，实现了一次编译，到处运行  JDK &amp;amp; JRE 1.JDK 全称Java Development Kit，java开发工具包 JDK=JRE+java的开发工具java，javac，javadoc,javap等 2.JRE Java Runtime Environment，java运行环境 JRE=JVM+Java的核心类库 =&amp;gt;JDK=JVM+Java SE标准类库+开发工具集  三、Java开发注意事项 一个源文件最多只能有一个public类。其它类的个数不限。编译后每一个类都对应一个.class 也可以将main方法写在非public类中，然后指定运行非public类这样入口方法就是非public的main方法
+public class Hello{ public static void main (String []args){ System.out.println(&amp;#34;Hello,l&amp;#34;); } } public class Hello{ public static void main (String []args){ System.out.println(&amp;#34;Hello,l&amp;#34;); } } class Dog{ public static void main (String []args){ System.</description>
+    </item>
+    
+    
+    
+    
     
   </channel>
 </rss>

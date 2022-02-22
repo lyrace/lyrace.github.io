@@ -9,7 +9,40 @@
       <link>https://lyrace.github.io/papermod-cover.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 10 Feb 2022 17:39:46 +0800</lastBuildDate><atom:link href="https://lyrace.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 22 Feb 2022 15:30:06 +0800</lastBuildDate><atom:link href="https://lyrace.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【Java笔记】13.代码块</title>
+      <link>https://lyrace.github.io/post/java13/</link>
+      <pubDate>Tue, 22 Feb 2022 15:30:06 +0800</pubDate>
+      
+      <guid>https://lyrace.github.io/post/java13/</guid>
+      <description>代码块 一、基本介绍 代码化块又称为初始化块，属于类中的成员，类似于方法，将逻辑语句封装在方法体中，通过{}包围起来。
+但没有方法名，没有返回，没有参数，只有方法体，且不用通过对象或类显式调用，而是==加载类时==，创建对象时隐式调用。
+二、基本语法 1.语法 [修饰符]{
+​	代码
+};
+ 修饰符可选，但写的话只能写static 代码块分两类，使用static修饰的交静态代码块，没有static修饰的，叫普通代码块/非静态代码块。 逻辑语句可以为任何逻辑语句 输入、输出、方法调用、循环、判断等 ;可以写，也可以省略  2.用处 如果多个构造器中都有重复的语句，可以抽取到初始化块中。
+public class CodeBlock01 { public static void main(String[] args) { Movie movie = new Movie(&amp;#34;xxx电影&amp;#34;); System.out.println(&amp;#34;-----------&amp;#34;); new Movie(&amp;#34;电影&amp;#34;,50,&amp;#34;xx&amp;#34;); } } class Movie{ private String name; private double price; private String director; // 把三个构造器的相同语句放入一个代码块中  // 不管调用那个构造器，创建对象，都会先调用代码块的内容  // 代码块调用的顺序优先于构造器  { System.out.println(&amp;#34;屏幕打开..&amp;#34;); System.out.println(&amp;#34;广告开始..&amp;#34;); System.out.println(&amp;#34;电影开始..&amp;#34;); } public Movie(String name){ System.out.println(&amp;#34;Movie(String name)被调用&amp;#34;); this.name = name; } public Movie(String name,double price){ System.</description>
+    </item>
+    
+    <item>
+      <title>【Java笔记】12.main</title>
+      <link>https://lyrace.github.io/post/java12/</link>
+      <pubDate>Tue, 22 Feb 2022 09:28:56 +0800</pubDate>
+      
+      <guid>https://lyrace.github.io/post/java12/</guid>
+      <description>main public static void main(String[] args){}
+  main方法由虚拟机调用
+  java虚拟机需要调用类的main()方法，该方法的访问权限必须是public
+  java虚拟机在执行main()方法时不必创建对象&amp;ndash;&amp;gt;该方法必须是static
+  该方法接收String类型的数组参数，该数组保存执行java命令时传递给所运行的类的参数
+  cmd中java 执行的程序 参数1 参数2 参数3&amp;hellip; e.g.:java HelloWorld n1 n2 n3
+args数组 第一个参数为n1 第二个参数为n2 第三个参数为n3
+IDEA中传参数
+  main()方法中，可以直接调用main方法所在类的静态方法或静态属性，但不能访问该类中的非静态成员，必须创建该类的一个实例对象后，才能通过这个对象访问类中的非静态成员
+  </description>
+    </item>
+    
     <item>
       <title>【Java笔记】11 类变量和类方法</title>
       <link>https://lyrace.github.io/post/java11/</link>

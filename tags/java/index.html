@@ -134,6 +134,63 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>【Java笔记】13.代码块
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>代码块 一、基本介绍 代码化块又称为初始化块，属于类中的成员，类似于方法，将逻辑语句封装在方法体中，通过{}包围起来。
+但没有方法名，没有返回，没有参数，只有方法体，且不用通过对象或类显式调用，而是==加载类时==，创建对象时隐式调用。
+二、基本语法 1.语法 [修饰符]{
+​	代码
+};
+ 修饰符可选，但写的话只能写static 代码块分两类，使用static修饰的交静态代码块，没有static修饰的，叫普通代码块/非静态代码块。 逻辑语句可以为任何逻辑语句 输入、输出、方法调用、循环、判断等 ;可以写，也可以省略  2.用处 如果多个构造器中都有重复的语句，可以抽取到初始化块中。
+public class CodeBlock01 { public static void main(String[] args) { Movie movie = new Movie(&#34;xxx电影&#34;); System.out.println(&#34;-----------&#34;); new Movie(&#34;电影&#34;,50,&#34;xx&#34;); } } class Movie{ private String name; private double price; private String director; // 把三个构造器的相同语句放入一个代码块中  // 不管调用那个构造器，创建对象，都会先调用代码块的内容  // 代码块调用的顺序优先于构造器  { System.out.println(&#34;屏幕打开..&#34;); System.out.println(&#34;广告开始..&#34;); System.out.println(&#34;电影开始..&#34;); } public Movie(String name){ System.out.println(&#34;Movie(String name)被调用&#34;); this.name = name; } public Movie(String name,double price){ System....</p>
+  </section>
+  <footer class="entry-footer"><span title='2022-02-22 15:30:06 +0800 CST'>February 22, 2022</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Theme PaperMod</footer>
+  <a class="entry-link" aria-label="post link to 【Java笔记】13.代码块" href="https://lyrace.github.io/post/java13/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【Java笔记】12.main
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>main public static void main(String[] args){}
+  main方法由虚拟机调用
+  java虚拟机需要调用类的main()方法，该方法的访问权限必须是public
+  java虚拟机在执行main()方法时不必创建对象–&gt;该方法必须是static
+  该方法接收String类型的数组参数，该数组保存执行java命令时传递给所运行的类的参数
+  cmd中java 执行的程序 参数1 参数2 参数3… e.g.:java HelloWorld n1 n2 n3
+args数组 第一个参数为n1 第二个参数为n2 第三个参数为n3
+IDEA中传参数
+  main()方法中，可以直接调用main方法所在类的静态方法或静态属性，但不能访问该类中的非静态成员，必须创建该类的一个实例对象后，才能通过这个对象访问类中的非静态成员
+  </p>
+  </section>
+  <footer class="entry-footer"><span title='2022-02-22 09:28:56 +0800 CST'>February 22, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Theme PaperMod</footer>
+  <a class="entry-link" aria-label="post link to 【Java笔记】12.main" href="https://lyrace.github.io/post/java12/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【Leetcode】367.有效的完全平方数
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>367.有效的完全平方数 题目链接
+给定一个 正整数 num ，编写一个函数，如果 num 是一个完全平方数，则返回 true ，否则返回 false 。
+进阶：不要 使用任何内置的库函数，如 sqrt 。
+示例1：
+输入：num = 16 输出：true 示例2：
+输入：num = 14 输出：false 提示：
+ 1 &lt;= num &lt;= 2^31^ - 1  二分查找 class Solution { public boolean isPerfectSquare(int num) { int left = 1; int right = num; int mid = left &#43; (right - left) / 2; while(left &lt;= right){ if((long)mid * mid == num){ return true; }else if((long)mid * mid &lt; num){ left = mid &#43; 1; }else{ right = mid -1; } mid = left &#43; (right - left) / 2; } return false; } }  乘法可能会越界，强转一下...</p>
+  </section>
+  <footer class="entry-footer"><span title='2022-02-21 20:14:42 +0800 CST'>February 21, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Theme PaperMod</footer>
+  <a class="entry-link" aria-label="post link to 【Leetcode】367.有效的完全平方数" href="https://lyrace.github.io/post/leetcode367/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>【LeetCode】69.x的平方根(未完)
     </h2>
   </header>
@@ -166,67 +223,6 @@ public class VisticStatic { public static void main(String[] args) { //类名.�
   </section>
   <footer class="entry-footer"><span title='2022-02-10 17:39:46 +0800 CST'>February 10, 2022</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Theme PaperMod</footer>
   <a class="entry-link" aria-label="post link to 【Java笔记】11 类变量和类方法" href="https://lyrace.github.io/post/java11/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【LeetCode】34. 在排序数组中查找元素的第一个和最后一个位置
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>34.在排序数组中查找元素的第一个和最后一个位置 题目链接
-给定一个按照升序排列的整数数组 nums，和一个目标值 target。找出给定目标值在数组中的开始位置和结束位置。
-如果数组中不存在目标值 target，返回 [-1, -1]。
-示例1：
-输入：nums = [5,7,7,8,8,10], target = 8 输出：[3,4] 示例2：
-输入：nums = [5,7,7,8,8,10], target = 6 输出：[-1,-1] 示例3：
-输入：nums = [], target = 0 输出：[-1,-1] 提示：
-  0 &lt;= nums.length &lt;= 105
-  -109 &lt;= nums[i] &lt;= 109
-  nums 是一个非递减数组
-  -109 &lt;= target &lt;= 109
-  二分法 class Solution { public int searchInsert(int[] nums, int target) { int left = 0; int right = nums....</p>
-  </section>
-  <footer class="entry-footer"><span title='2022-01-30 17:08:25 +0800 CST'>January 30, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Theme PaperMod</footer>
-  <a class="entry-link" aria-label="post link to 【LeetCode】34. 在排序数组中查找元素的第一个和最后一个位置" href="https://lyrace.github.io/post/leetcode34/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【LeetCode】35.搜索插入位置
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>35.搜索插入位置 题目链接
-给定一个排序数组和一个目标值，在数组中找到目标值，并返回其索引。如果目标值不存在于数组中，返回它将会被按顺序插入的位置。
-请必须使用时间复杂度为O(log n)的算法。
-示例1：
-输入: nums = [1,3,5,6], target = 5 输出: 2 示例2：
-输入: nums = [1,3,5,6], target = 2 输出: 1 示例3：
-输入: nums = [1,3,5,6], target = 7 输出: 4 示例4：
-输入: nums = [1,3,5,6], target = 0 输出: 0 示例5：
-输入: nums = [1], target = 0 输出: 0 提示：
- 1 &lt;= nums.length &lt;= 104 -104 &lt;= nums[i] &lt;= 104 nums 为无重复元素的升序排列数组 -104 &lt;= target &lt;= 104  二分法 class Solution { public int searchInsert(int[] nums, int target) { int left = 0; int right = nums....</p>
-  </section>
-  <footer class="entry-footer"><span title='2022-01-30 08:08:25 +0800 CST'>January 30, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Theme PaperMod</footer>
-  <a class="entry-link" aria-label="post link to 【LeetCode】35.搜索插入位置" href="https://lyrace.github.io/post/leetcode35/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【LeetCode】704.二分查找
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>704.二分查找 题目链接
-给定一个 n 个元素有序的（升序）整型数组 nums 和一个目标值 target ，写一个函数搜索 nums 中的 target，如果目标值存在返回下标，否则返回 -1。
-示例1：
-输入: nums = [-1,0,3,5,9,12], target = 9 输出: 4 解释: 9 出现在 nums 中并且下标为 4 示例2：
-输入: nums = [-1,0,3,5,9,12], target = 2 输出: -1 解释: 2 不存在 nums 中因此返回 -1 提示：
- 你可以假设 nums 中的所有元素是不重复的。 n 将在 [1, 10000]之间。 nums 的每个元素都将在 [-9999, 9999]之间。  二分查找 class Solution { public int search(int[] nums, int target) { int left = 0; int right = nums....</p>
-  </section>
-  <footer class="entry-footer"><span title='2022-01-30 08:08:25 +0800 CST'>January 30, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Theme PaperMod</footer>
-  <a class="entry-link" aria-label="post link to 【LeetCode】704.二分查找" href="https://lyrace.github.io/post/leetcode704/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

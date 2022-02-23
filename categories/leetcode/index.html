@@ -134,6 +134,18 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>Leetcode27
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p></p>
+  </section>
+  <footer class="entry-footer"><span title='2022-02-23 19:20:29 +0800 CST'>February 23, 2022</span>&nbsp;·&nbsp;0 min&nbsp;·&nbsp;Theme PaperMod</footer>
+  <a class="entry-link" aria-label="post link to Leetcode27" href="https://lyrace.github.io/post/leetcode27/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>【Leetcode】367.有效的完全平方数
     </h2>
   </header>
@@ -182,13 +194,14 @@
 输入：nums = [5,7,7,8,8,10], target = 8 输出：[3,4] 示例2：
 输入：nums = [5,7,7,8,8,10], target = 6 输出：[-1,-1] 示例3：
 输入：nums = [], target = 0 输出：[-1,-1] 提示：
-  0 &lt;= nums.length &lt;= 105
-  -109 &lt;= nums[i] &lt;= 109
+  0 &lt;= nums.length &lt;= 10^5^
+  -10^9^ &lt;= nums[i] &lt;= 10^9^
   nums 是一个非递减数组
-  -109 &lt;= target &lt;= 109
-  二分法 class Solution { public int searchInsert(int[] nums, int target) { int left = 0; int right = nums....</p>
+  -10^9^ &lt;= target &lt;= 10^9^
+  二分查找 分三种情况讨论，且在二分查找是，nums[mid]==target时仍更新，才能保证取到的是边界值
+class Solution27{ int[] searchRange(int[] nums, int target) { // target的左边界 比target小的那个  int leftBorder = getLeftBorder(nums, target); // target的右边界 比target大的那个  int rightBorder = getRightBorder(nums, target); // 情况一  // target 在数组范围的右边或者左边，例如数组{3, 4, 5}，target为2或者数组{3, 4, 5},target为6，此时应该返回{-1, -1}  if (leftBorder == -2 || rightBorder == -2) return new int[]{-1, -1}; // 情况三  // target 在数组范围中，且数组中存在target，例如数组{3,6,7},target为6，此时应该返回{1, 1}  if (rightBorder - leftBorder &gt; 1) return new int[]{leftBorder &#43; 1, rightBorder - 1}; // 情况二  // target 在数组范围中，且数组中不存在target，例如数组{3,6,7},target为5，此时应该返回{-1, -1}  return new int[]{-1, -1}; } // 寻找target的右边界  int getRightBorder(int[] nums, int target) { int left = 0; int right = nums....</p>
   </section>
-  <footer class="entry-footer"><span title='2022-01-30 17:08:25 +0800 CST'>January 30, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Theme PaperMod</footer>
+  <footer class="entry-footer"><span title='2022-01-30 17:08:25 +0800 CST'>January 30, 2022</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Theme PaperMod</footer>
   <a class="entry-link" aria-label="post link to 【LeetCode】34. 在排序数组中查找元素的第一个和最后一个位置" href="https://lyrace.github.io/post/leetcode34/"></a>
 </article>
 
@@ -211,23 +224,6 @@
   </section>
   <footer class="entry-footer"><span title='2022-01-30 08:08:25 +0800 CST'>January 30, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Theme PaperMod</footer>
   <a class="entry-link" aria-label="post link to 【LeetCode】35.搜索插入位置" href="https://lyrace.github.io/post/leetcode35/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【LeetCode】704.二分查找
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>704.二分查找 题目链接
-给定一个 n 个元素有序的（升序）整型数组 nums 和一个目标值 target ，写一个函数搜索 nums 中的 target，如果目标值存在返回下标，否则返回 -1。
-示例1：
-输入: nums = [-1,0,3,5,9,12], target = 9 输出: 4 解释: 9 出现在 nums 中并且下标为 4 示例2：
-输入: nums = [-1,0,3,5,9,12], target = 2 输出: -1 解释: 2 不存在 nums 中因此返回 -1 提示：
- 你可以假设 nums 中的所有元素是不重复的。 n 将在 [1, 10000]之间。 nums 的每个元素都将在 [-9999, 9999]之间。  二分查找 class Solution { public int search(int[] nums, int target) { int left = 0; int right = nums....</p>
-  </section>
-  <footer class="entry-footer"><span title='2022-01-30 08:08:25 +0800 CST'>January 30, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Theme PaperMod</footer>
-  <a class="entry-link" aria-label="post link to 【LeetCode】704.二分查找" href="https://lyrace.github.io/post/leetcode704/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

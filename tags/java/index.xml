@@ -9,7 +9,16 @@
       <link>https://lyrace.github.io/papermod-cover.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 22 Feb 2022 15:30:06 +0800</lastBuildDate><atom:link href="https://lyrace.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 23 Feb 2022 19:20:29 +0800</lastBuildDate><atom:link href="https://lyrace.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode27</title>
+      <link>https://lyrace.github.io/post/leetcode27/</link>
+      <pubDate>Wed, 23 Feb 2022 19:20:29 +0800</pubDate>
+      
+      <guid>https://lyrace.github.io/post/leetcode27/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>【Java笔记】13.代码块</title>
       <link>https://lyrace.github.io/post/java13/</link>
@@ -101,11 +110,12 @@ public class VisticStatic { public static void main(String[] args) { //类名.�
 输入：nums = [5,7,7,8,8,10], target = 8 输出：[3,4] 示例2：
 输入：nums = [5,7,7,8,8,10], target = 6 输出：[-1,-1] 示例3：
 输入：nums = [], target = 0 输出：[-1,-1] 提示：
-  0 &amp;lt;= nums.length &amp;lt;= 105
-  -109 &amp;lt;= nums[i] &amp;lt;= 109
+  0 &amp;lt;= nums.length &amp;lt;= 10^5^
+  -10^9^ &amp;lt;= nums[i] &amp;lt;= 10^9^
   nums 是一个非递减数组
-  -109 &amp;lt;= target &amp;lt;= 109
-  二分法 class Solution { public int searchInsert(int[] nums, int target) { int left = 0; int right = nums.</description>
+  -10^9^ &amp;lt;= target &amp;lt;= 10^9^
+  二分查找 分三种情况讨论，且在二分查找是，nums[mid]==target时仍更新，才能保证取到的是边界值
+class Solution27{ int[] searchRange(int[] nums, int target) { // target的左边界 比target小的那个  int leftBorder = getLeftBorder(nums, target); // target的右边界 比target大的那个  int rightBorder = getRightBorder(nums, target); // 情况一  // target 在数组范围的右边或者左边，例如数组{3, 4, 5}，target为2或者数组{3, 4, 5},target为6，此时应该返回{-1, -1}  if (leftBorder == -2 || rightBorder == -2) return new int[]{-1, -1}; // 情况三  // target 在数组范围中，且数组中存在target，例如数组{3,6,7},target为6，此时应该返回{1, 1}  if (rightBorder - leftBorder &amp;gt; 1) return new int[]{leftBorder + 1, rightBorder - 1}; // 情况二  // target 在数组范围中，且数组中不存在target，例如数组{3,6,7},target为5，此时应该返回{-1, -1}  return new int[]{-1, -1}; } // 寻找target的右边界  int getRightBorder(int[] nums, int target) { int left = 0; int right = nums.</description>
     </item>
     
     <item>

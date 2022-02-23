@@ -145,6 +145,20 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>【Java笔记】06 进制
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>【Java笔记】06 进制 一、四种进制 整数的四种表示方法： 1.二进制：0，1，满2进1，以0b或0B开头 2.十进制：0-9，满10进1 3.八进制：0-7，满8进1，以数字0开头表示 4.十六进制：0-15，满16进1，以0x或0X开头表示
+int n1 = 0b1010;//二进制，10 	int n2 = 1010;//十进制，1010 	int n3 = 01010;//八进制，01010 	int n4 = 0X10101//十六进制，0X10101 二、进制转换  十进制转二进制 除2取余，注意一个字节8位 34=0B0010 0010 十进制转八进制 除8取余，131=0203 十进制转十六进制 除16取余，237=0xED 二进制转八进制 低位开始，二进制数三位一组，转成八进制 0B11 010 101=&gt;0 3 2 5 二进制转十六进制 低位开始，四位一组 0b1101 0101 =&gt; 0x D 5  三、原码、反码、补码 对于有符号： 1.二进制的最高位是符号位，0表示整数，1表示负数 2.正数的原码、反码、补码都一样 3.负数的反码=原码符号位不变，其它位取反 4.负数的补码=反码&#43;1，负数的反码=负数的补码-1 5.0的反码，补码都是0 6.Java没有无符号数 7.计算机都是以补码的方式运算的 8.看运算结果时，看原码
+四、位运算符  按位与&amp;	两位全为1，结果为1，否则为0 2&amp;3 1.2的原码=&gt;00000000 00000000 00000000 00000010 2的补码=&gt;00000000 00000000 00000000 00000010 2....</p>
+  </section>
+  <footer class="entry-footer"><span title='2022-01-21 00:40:09 +0800 CST'>January 21, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Theme PaperMod</footer>
+  <a class="entry-link" aria-label="post link to 【Java笔记】06 进制" href="https://lyrace.github.io/post/java6/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>【Java笔记】05 键盘输入
     </h2>
   </header>
@@ -198,24 +212,10 @@ System.out.println(100&#43;98);//198 System.out.println(&#34;100&#34;&#43;98);//
   <footer class="entry-footer"><span title='2022-01-21 00:40:04 +0800 CST'>January 21, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Theme PaperMod</footer>
   <a class="entry-link" aria-label="post link to 【Java笔记】02 DOS" href="https://lyrace.github.io/post/java2/"></a>
 </article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>【Java笔记】01 概述
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>【Java笔记】01 概述 一、java特性 1.面向对象的（oop) 2.健壮的，由强制类型机制、异常处理、垃圾的自动收集等保证 3.跨平台性的，一个编译好的class文件可在多个操作系统下运行 4.解释性的 解释性：编译后的代码，不能直接被机器执行，需要解释器来执行,javascript,PHP,java 编译性：编译后的代码，可以直接被机器执行，c/c&#43;&#43;
-二、java运行机制及运行过程 JVM让同一个java程序在三个不同的操作系统中都可以执行——&gt;跨平台性 1.java核心机制——java虚拟机[JVM java virtual machine]
- 基本介绍 1.JVM是一个虚拟的计算机，具有指令集并使用不同的存储区域。负责执行指令，管理数据、内存、寄存器，包含在JDK中 2.不同的平台有不同的虚拟机 3.虚拟机机制屏蔽了底层运行平台的差别，实现了一次编译，到处运行  JDK &amp; JRE 1.JDK 全称Java Development Kit，java开发工具包 JDK=JRE&#43;java的开发工具java，javac，javadoc,javap等 2.JRE Java Runtime Environment，java运行环境 JRE=JVM&#43;Java的核心类库 =&gt;JDK=JVM&#43;Java SE标准类库&#43;开发工具集  三、Java开发注意事项 一个源文件最多只能有一个public类。其它类的个数不限。编译后每一个类都对应一个.class 也可以将main方法写在非public类中，然后指定运行非public类这样入口方法就是非public的main方法
-public class Hello{ public static void main (String []args){ System.out.println(&#34;Hello,l&#34;); } } public class Hello{ public static void main (String []args){ System.out.println(&#34;Hello,l&#34;); } } class Dog{ public static void main (String []args){ System....</p>
-  </section>
-  <footer class="entry-footer"><span title='2022-01-21 00:34:50 +0800 CST'>January 21, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Theme PaperMod</footer>
-  <a class="entry-link" aria-label="post link to 【Java笔记】01 概述" href="https://lyrace.github.io/post/java1/"></a>
-</article>
 <footer class="page-footer">
   <nav class="pagination">
     <a class="prev" href="https://lyrace.github.io/page/3/">« Prev Page</a>
+    <a class="next" href="https://lyrace.github.io/page/5/">Next Page »</a>
   </nav>
 </footer>
     </main>

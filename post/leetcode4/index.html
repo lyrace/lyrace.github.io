@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>【LeetCode】4.寻找两个正序数组的中位数（未完） | My Blog</title>
-<meta name="keywords" content="java, 数组" />
+<meta name="keywords" content="java, 数组, 二分查找" />
 <meta name="description" content="4.寻找两个正序数组的中位数 题目链接
 给定两个大小分别为 m 和 n 的正序（从小到大）数组 nums1 和 nums2。请你找出并返回这两个正序数组的 中位数 。
 算法的时间复杂度应该为 O(log (m&#43;n)) 。
@@ -123,7 +123,7 @@
   "name": "【LeetCode】4.寻找两个正序数组的中位数（未完）",
   "description": "4.寻找两个正序数组的中位数 题目链接\n给定两个大小分别为 m 和 n 的正序（从小到大）数组 nums1 和 nums2。请你找出并返回这两个正序数组的 中位数 。\n算法的时间复杂度应该为 O(log (m+n)) 。\n示例1：\n输入：nums1 = [1,3], nums2 = [2] 输出：2.00000 解释：合并数组 = [1,2,3] ，中位数 2 示例2：\n输入：nums1 = [1,2], nums2 = [3,4] 输出：2.50000 解释：合并数组 = [1,2,3,4] ，中位数 (2 + 3) / 2 = 2.5 示例3：\n输入：nums1 = [0,0], nums2 = [0,0] 输出：0.00000 示例4：\n输入：nums1 = [], nums2 = [1] 输出：1.00000 示例5：\n输入：nums1 = [2], nums2 = [] 输出：2.",
   "keywords": [
-    "java", "数组"
+    "java", "数组", "二分查找"
   ],
   "articleBody": "4.寻找两个正序数组的中位数 题目链接\n给定两个大小分别为 m 和 n 的正序（从小到大）数组 nums1 和 nums2。请你找出并返回这两个正序数组的 中位数 。\n算法的时间复杂度应该为 O(log (m+n)) 。\n示例1：\n输入：nums1 = [1,3], nums2 = [2] 输出：2.00000 解释：合并数组 = [1,2,3] ，中位数 2 示例2：\n输入：nums1 = [1,2], nums2 = [3,4] 输出：2.50000 解释：合并数组 = [1,2,3,4] ，中位数 (2 + 3) / 2 = 2.5 示例3：\n输入：nums1 = [0,0], nums2 = [0,0] 输出：0.00000 示例4：\n输入：nums1 = [], nums2 = [1] 输出：1.00000 示例5：\n输入：nums1 = [2], nums2 = [] 输出：2.00000 自己写的，时间复杂度O(m+n)  归并，合成一个数组  class Solution { public double findMedianSortedArrays(int[] nums1, int[] nums2) { int m = nums1.length; int n = nums2.length; int total = m + n; int z = (m + n) / 2; double[] arr = new double[m + n]; int i = 0, j = 0, k = 0; double zhong; // 如果有一个数组长度为0，不进行数组拼接  if (m == 0) { if (total % 2 == 0) { zhong = (nums2[z - 1] + nums2[z]) / 2.0; } else { zhong = nums2[z]; } return zhong; } else if (n == 0) { if (total % 2 == 0) { zhong = (nums1[z - 1] + nums1[z]) / 2.0; } else { zhong = nums1[z]; } return zhong; } else { while ((i  m) \u0026\u0026 (j  n)) { if (nums1[i]  nums2[j]) { arr[k] = nums1[i]; k++; i++; } else { arr[k] = nums2[j]; k++; j++; } } if (nums1[m - 1]  nums2[n - 1]) { for (; k  total; k++) { arr[k] = nums2[j]; j++; } } else { for (; k  total; k++) { arr[k] = nums1[i]; i++; } } if (total % 2 == 0) { zhong = (arr[z - 1] + arr[z]) / 2.0; } else { zhong = arr[z]; } return zhong; } } }  不归并，两个指针，将较小指针后移一位，直到中位数位置  二分查找，时间复杂度：O(log(m+n)) 转化成寻找两个有序数组中的第 k 小的数，其中 k为 (m+n)/2 或 (m+n)/2+1\n",
   "wordCount" : "295",
@@ -338,6 +338,7 @@
     <ul class="post-tags">
       <li><a href="https://lyrace.github.io/tags/java/">java</a></li>
       <li><a href="https://lyrace.github.io/tags/%E6%95%B0%E7%BB%84/">数组</a></li>
+      <li><a href="https://lyrace.github.io/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/">二分查找</a></li>
     </ul>
 <nav class="paginav">
   <a class="prev" href="https://lyrace.github.io/post/leetcode704/">
@@ -355,7 +356,7 @@
 
 <div class="share-buttons">
     <a target="_blank" rel="noopener noreferrer" aria-label="share 【LeetCode】4.寻找两个正序数组的中位数（未完） on twitter"
-        href="https://twitter.com/intent/tweet/?text=%e3%80%90LeetCode%e3%80%914.%e5%af%bb%e6%89%be%e4%b8%a4%e4%b8%aa%e6%ad%a3%e5%ba%8f%e6%95%b0%e7%bb%84%e7%9a%84%e4%b8%ad%e4%bd%8d%e6%95%b0%ef%bc%88%e6%9c%aa%e5%ae%8c%ef%bc%89&amp;url=https%3a%2f%2flyrace.github.io%2fpost%2fleetcode4%2f&amp;hashtags=java%2c%e6%95%b0%e7%bb%84">
+        href="https://twitter.com/intent/tweet/?text=%e3%80%90LeetCode%e3%80%914.%e5%af%bb%e6%89%be%e4%b8%a4%e4%b8%aa%e6%ad%a3%e5%ba%8f%e6%95%b0%e7%bb%84%e7%9a%84%e4%b8%ad%e4%bd%8d%e6%95%b0%ef%bc%88%e6%9c%aa%e5%ae%8c%ef%bc%89&amp;url=https%3a%2f%2flyrace.github.io%2fpost%2fleetcode4%2f&amp;hashtags=java%2c%e6%95%b0%e7%bb%84%2c%e4%ba%8c%e5%88%86%e6%9f%a5%e6%89%be">
         <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
             <path
                 d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-253.927,424.544c135.939,0 210.268,-112.643 210.268,-210.268c0,-3.218 0,-6.437 -0.153,-9.502c14.406,-10.421 26.973,-23.448 36.935,-38.314c-13.18,5.824 -27.433,9.809 -42.452,11.648c15.326,-9.196 26.973,-23.602 32.49,-40.92c-14.252,8.429 -30.038,14.56 -46.896,17.931c-13.487,-14.406 -32.644,-23.295 -53.946,-23.295c-40.767,0 -73.87,33.104 -73.87,73.87c0,5.824 0.613,11.494 1.992,16.858c-61.456,-3.065 -115.862,-32.49 -152.337,-77.241c-6.284,10.881 -9.962,23.601 -9.962,37.088c0,25.594 13.027,48.276 32.95,61.456c-12.107,-0.307 -23.448,-3.678 -33.41,-9.196l0,0.92c0,35.862 25.441,65.594 59.311,72.49c-6.13,1.686 -12.72,2.606 -19.464,2.606c-4.751,0 -9.348,-0.46 -13.946,-1.38c9.349,29.426 36.628,50.728 68.965,51.341c-25.287,19.771 -57.164,31.571 -91.8,31.571c-5.977,0 -11.801,-0.306 -17.625,-1.073c32.337,21.15 71.264,33.41 112.95,33.41Z" />

@@ -59,7 +59,7 @@
   nums 是一个非递减数组
   -10^9^ &amp;lt;= target &amp;lt;= 10^9^
   二分查找 分三种情况讨论，且在二分查找是，nums[mid]==target时仍更新，才能保证取到的是边界值
-class Solution27{ int[] searchRange(int[] nums, int target) { // target的左边界 比target小的那个  int leftBorder = getLeftBorder(nums, target); // target的右边界 比target大的那个  int rightBorder = getRightBorder(nums, target); // 情况一  // target 在数组范围的右边或者左边，例如数组{3, 4, 5}，target为2或者数组{3, 4, 5},target为6，此时应该返回{-1, -1}  if (leftBorder == -2 || rightBorder == -2) return new int[]{-1, -1}; // 情况三  // target 在数组范围中，且数组中存在target，例如数组{3,6,7},target为6，此时应该返回{1, 1}  if (rightBorder - leftBorder &amp;gt; 1) return new int[]{leftBorder + 1, rightBorder - 1}; // 情况二  // target 在数组范围中，且数组中不存在target，例如数组{3,6,7},target为5，此时应该返回{-1, -1}  return new int[]{-1, -1}; } // 寻找target的右边界  int getRightBorder(int[] nums, int target) { int left = 0; int right = nums.</description>
+class Solution{ int[] searchRange(int[] nums, int target) { // target的左边界 比target小的那个  int leftBorder = getLeftBorder(nums, target); // target的右边界 比target大的那个  int rightBorder = getRightBorder(nums, target); // 情况一  // target 在数组范围的右边或者左边，例如数组{3, 4, 5}，target为2或者数组{3, 4, 5},target为6，此时应该返回{-1, -1}  if (leftBorder == -2 || rightBorder == -2) return new int[]{-1, -1}; // 情况三  // target 在数组范围中，且数组中存在target，例如数组{3,6,7},target为6，此时应该返回{1, 1}  if (rightBorder - leftBorder &amp;gt; 1) return new int[]{leftBorder + 1, rightBorder - 1}; // 情况二  // target 在数组范围中，且数组中不存在target，例如数组{3,6,7},target为5，此时应该返回{-1, -1}  return new int[]{-1, -1}; } // 寻找target的右边界  int getRightBorder(int[] nums, int target) { int left = 0; int right = nums.</description>
     </item>
     
     <item>

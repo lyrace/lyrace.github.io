@@ -145,6 +145,27 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>【Java笔记】12.main
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>main public static void main(String[] args){}
+  main方法由虚拟机调用
+  java虚拟机需要调用类的main()方法，该方法的访问权限必须是public
+  java虚拟机在执行main()方法时不必创建对象–&gt;该方法必须是static
+  该方法接收String类型的数组参数，该数组保存执行java命令时传递给所运行的类的参数
+  cmd中java 执行的程序 参数1 参数2 参数3… e.g.:java HelloWorld n1 n2 n3
+args数组 第一个参数为n1 第二个参数为n2 第三个参数为n3
+IDEA中传参数
+  main()方法中，可以直接调用main方法所在类的静态方法或静态属性，但不能访问该类中的非静态成员，必须创建该类的一个实例对象后，才能通过这个对象访问类中的非静态成员
+  </p>
+  </section>
+  <footer class="entry-footer"><span title='2022-02-22 09:28:56 +0800 CST'>February 22, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Theme PaperMod</footer>
+  <a class="entry-link" aria-label="post link to 【Java笔记】12.main" href="https://lyrace.github.io/post/java12/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>【Leetcode】367.有效的完全平方数
     </h2>
   </header>
@@ -219,27 +240,6 @@ class Solution{ int[] searchRange(int[] nums, int target) { // target的左边�
   </section>
   <footer class="entry-footer"><span title='2022-01-30 17:08:25 +0800 CST'>January 30, 2022</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Theme PaperMod</footer>
   <a class="entry-link" aria-label="post link to 【LeetCode】34. 在排序数组中查找元素的第一个和最后一个位置" href="https://lyrace.github.io/post/leetcode34/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>【LeetCode】35.搜索插入位置
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>35.搜索插入位置 题目链接
-给定一个排序数组和一个目标值，在数组中找到目标值，并返回其索引。如果目标值不存在于数组中，返回它将会被按顺序插入的位置。
-请必须使用时间复杂度为O(log n)的算法。
-示例1：
-输入: nums = [1,3,5,6], target = 5 输出: 2 示例2：
-输入: nums = [1,3,5,6], target = 2 输出: 1 示例3：
-输入: nums = [1,3,5,6], target = 7 输出: 4 示例4：
-输入: nums = [1,3,5,6], target = 0 输出: 0 示例5：
-输入: nums = [1], target = 0 输出: 0 提示：
- 1 &lt;= nums.length &lt;= 104 -104 &lt;= nums[i] &lt;= 104 nums 为无重复元素的升序排列数组 -104 &lt;= target &lt;= 104  二分法 class Solution { public int searchInsert(int[] nums, int target) { int left = 0; int right = nums....</p>
-  </section>
-  <footer class="entry-footer"><span title='2022-01-30 08:08:25 +0800 CST'>January 30, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Theme PaperMod</footer>
-  <a class="entry-link" aria-label="post link to 【LeetCode】35.搜索插入位置" href="https://lyrace.github.io/post/leetcode35/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

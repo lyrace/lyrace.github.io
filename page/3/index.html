@@ -145,6 +145,27 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>【LeetCode】35.搜索插入位置
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>35.搜索插入位置 题目链接
+给定一个排序数组和一个目标值，在数组中找到目标值，并返回其索引。如果目标值不存在于数组中，返回它将会被按顺序插入的位置。
+请必须使用时间复杂度为O(log n)的算法。
+示例1：
+输入: nums = [1,3,5,6], target = 5 输出: 2 示例2：
+输入: nums = [1,3,5,6], target = 2 输出: 1 示例3：
+输入: nums = [1,3,5,6], target = 7 输出: 4 示例4：
+输入: nums = [1,3,5,6], target = 0 输出: 0 示例5：
+输入: nums = [1], target = 0 输出: 0 提示：
+ 1 &lt;= nums.length &lt;= 104 -104 &lt;= nums[i] &lt;= 104 nums 为无重复元素的升序排列数组 -104 &lt;= target &lt;= 104  二分法 class Solution { public int searchInsert(int[] nums, int target) { int left = 0; int right = nums....</p>
+  </section>
+  <footer class="entry-footer"><span title='2022-01-30 08:08:25 +0800 CST'>January 30, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Theme PaperMod</footer>
+  <a class="entry-link" aria-label="post link to 【LeetCode】35.搜索插入位置" href="https://lyrace.github.io/post/leetcode35/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>【LeetCode】704.二分查找
     </h2>
   </header>
@@ -211,22 +232,6 @@ public calss Recursion{ public static void main(String[] args){ T t1 = new T(); 
   </section>
   <footer class="entry-footer"><span title='2022-01-21 00:43:56 +0800 CST'>January 21, 2022</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Theme PaperMod</footer>
   <a class="entry-link" aria-label="post link to 【Java笔记】10 递归" href="https://lyrace.github.io/post/java10/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>【Java笔记】09 面向对象
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>【Java笔记】09 面向对象 一、类与对象  属性 成员属性=属性=field	访问修饰符 属性类型 属性名； 访问修饰符：public protected 默认 private 属性不赋值有默认值，跟数组默认值相同 方法（成员方法） 当程序执行到方法时，开辟一个独立的栈空间； 执行完毕，或者到return语句时，返回； 返回到调用方法的语句，继续执行后面的代码 方法的定义： 访问修饰符 返回数据类型 方法名（形参列表..）{//方法体 语句； return 返回值； }  同一个类中的方法调用，直接调用即可，不需要创建对象
-class A{ //同一个类中的方法调用，直接调用即可，不需要创建对象 	pubilc void print(int n){ System.out.println(&#34;输出&#34;); } public void test(){ print(); } } 跨类中的方法调用：A类调用B类方法，需要通过对象名调用。即创建B类的对象，再调用方法
-二、方法重载 java中允许同一个类中，多个同名方法的存在，但要求形参列表不一致 方法名：必须相同 形参列表：必须不同（形参类型或个数或顺序，至少有一样不同，参数名无要求） 返回类型：无要求
-三、可变参数 java允许将同一个类中多个同名同功能但参数个数不同的方法，封装成一个方法 可变参数的实参可以为0个或任意多个 可变参数的实参可以为数组 可变参数的本质就是数组 可变参数可以和普通类型的参数一起放在形参列表，但必须保证可变参数在最后 一个形参列表中最多只能出现一个可变参数
-public class VarParameter{ public static void main(String[] args){ //求2个、3个、4个...参数的和 	HspMethod m = new HspMethod(); System....</p>
-  </section>
-  <footer class="entry-footer"><span title='2022-01-21 00:43:49 +0800 CST'>January 21, 2022</span>&nbsp;·&nbsp;7 min&nbsp;·&nbsp;Theme PaperMod</footer>
-  <a class="entry-link" aria-label="post link to 【Java笔记】09 面向对象" href="https://lyrace.github.io/post/java9/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

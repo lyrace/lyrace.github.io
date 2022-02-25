@@ -128,7 +128,7 @@
   "keywords": [
     "java", "数组", "移除元素"
   ],
-  "articleBody": "27.移除元素 题目链接\n给你一个数组 nums 和一个值 val，你需要 原地 移除所有数值等于 val 的元素，并返回移除后数组的新长度。\n不要使用额外的数组空间，你必须仅使用 O(1) 额外空间并 原地 修改输入数组。\n元素的顺序可以改变。你不需要考虑数组中超出新长度后面的元素。\n说明:\n为什么返回数值是整数，但输出的答案是数组呢?\n请注意，输入数组是以「引用」方式传递的，这意味着在函数里修改输入数组对于调用者是可见的。\n你可以想象内部操作如下:\n// nums 是以“引用”方式传递的。也就是说，不对实参作任何拷贝 int len = removeElement(nums, val); // 在函数里修改输入数组对于调用者是可见的。 // 根据你的函数返回的长度, 它会打印出数组中 该长度范围内 的所有元素。 for (int i = 0; i 示例1：\n输入：nums = [3,2,2,3], val = 3 输出：2, nums = [2,2] 解释：函数应该返回新的长度 2, 并且 nums 中的前两个元素均为 2。你不需要考虑数组中超出新长度后面的元素。例如，函数返回的新长度为 2 ，而 nums = [2,2,3,3] 或 nums = [2,2,0,0]，也会被视作正确答案。 示例2：\n输入：nums = [0,1,2,2,3,0,4,2], val = 2 输出：5, nums = [0,1,4,0,3] 解释：函数应该返回新的长度 5, 并且 nums 中的前五个元素为 0, 1, 3, 0, 4。注意这五个元素可为任意顺序。你不需要考虑数组中超出新长度后面的元素。 提示：\n 0  0  0   暴力解一 外层循环判断是否与val相同，内层循环进行数组元素的移动\nclass Solution { public int removeElement(int[] nums, int val) { int length = nums.length; for(int i = 0; i  nums.length; ){ if(nums[i] == val){ for(int j = i; j  length - 1; j++){ nums[j] = nums[j + 1]; } nums[length - 1] = -1; //0  length--; }else{ i++; } } return length; } } 暴力解二 class Solution { public int removeElement(int[] nums, int val) { int length = nums.length; for(int i = 0; i  length; i++){ if(nums[i] == val) { for (int j = i + 1; j  length; j++) { nums[j - 1] = nums[j]; } length--; i--; } } return length; } } 双指针 双指针，右指针指向待处理（下一个要判断是否等于val）的元素，左指针指向待赋值的元素，即左指针指向等于val的元素\n 右指针指向的元素不等于val时，其指向的元素可以保留，将右指针指向的元素赋给左指针，左右指针右移 右指针指向的元素等于val时，其指向的元素不可以保留，则左指针不动，右指针右移  左指针指向的位置就是输出的数组长度\nclass Solution { public int removeElement(int[] nums, int val) { int left = 0; for(int right = 0; right  nums.length; right++){ if(nums[right] != val){ nums[left] = nums[right]; left++; } } return left; } } 双指针二 左指针放在数组头，右指针放在数组尾，当left 如果左指针指向的元素等于val，将右指针指向的元素赋值给左指针指向的位置，右指针左移一位 如果左指针指向的元素不等于val，左指针右移一位 左指针就是数组的长度。  class Solution { public int removeElement(int[] nums, int val) { int left = 0; int right = nums.length - 1; while (left ",
+  "articleBody": "27.移除元素 题目链接\n给你一个数组 nums 和一个值 val，你需要 原地 移除所有数值等于 val 的元素，并返回移除后数组的新长度。\n不要使用额外的数组空间，你必须仅使用 O(1) 额外空间并 原地 修改输入数组。\n元素的顺序可以改变。你不需要考虑数组中超出新长度后面的元素。\n说明:\n为什么返回数值是整数，但输出的答案是数组呢?\n请注意，输入数组是以「引用」方式传递的，这意味着在函数里修改输入数组对于调用者是可见的。\n你可以想象内部操作如下:\n// nums 是以“引用”方式传递的。也就是说，不对实参作任何拷贝 int len = removeElement(nums, val); // 在函数里修改输入数组对于调用者是可见的。 // 根据你的函数返回的长度, 它会打印出数组中 该长度范围内 的所有元素。 for (int i = 0; i 示例1：\n输入：nums = [3,2,2,3], val = 3 输出：2, nums = [2,2] 解释：函数应该返回新的长度 2, 并且 nums 中的前两个元素均为 2。你不需要考虑数组中超出新长度后面的元素。例如，函数返回的新长度为 2 ，而 nums = [2,2,3,3] 或 nums = [2,2,0,0]，也会被视作正确答案。 示例2：\n输入：nums = [0,1,2,2,3,0,4,2], val = 2 输出：5, nums = [0,1,4,0,3] 解释：函数应该返回新的长度 5, 并且 nums 中的前五个元素为 0, 1, 3, 0, 4。注意这五个元素可为任意顺序。你不需要考虑数组中超出新长度后面的元素。 提示：\n 0  0  0   暴力解一 外层循环判断是否与val相同，内层循环进行数组元素的移动\nclass Solution { public int removeElement(int[] nums, int val) { int length = nums.length; for(int i = 0; i  nums.length; ){ if(nums[i] == val){ for(int j = i; j  length - 1; j++){ nums[j] = nums[j + 1]; } nums[length - 1] = -1; //0  length--; }else{ i++; } } return length; } } 暴力解二 class Solution { public int removeElement(int[] nums, int val) { int length = nums.length; for(int i = 0; i  length; i++){ if(nums[i] == val) { for (int j = i + 1; j  length; j++) { nums[j - 1] = nums[j]; } length--; i--; } } return length; } } 双指针 双指针，右指针指向待处理（下一个要判断是否等于val）的元素，左指针指向待赋值的元素，即左指针指向等于val的元素\n 右指针指向的元素不等于val时，其指向的元素可以保留，将右指针指向的元素赋给左指针，左右指针右移 右指针指向的元素等于val时，其指向的元素不可以保留，则左指针不动，右指针右移  左指针指向的位置就是输出的数组长度\nclass Solution { public int removeElement(int[] nums, int val) { int left = 0; for(int right = 0; right  nums.length; right++){ if(nums[right] != val){ nums[left] = nums[right]; left++; } } return left; } } 双指针二 左指针放在数组头，右指针放在数组尾，当left 如果左指针指向的元素等于val，将右指针指向的元素赋值给左指针指向的位置，右指针左移一位 如果左指针指向的元素不等于val，左指针右移一位 左指针就是数组的长度。  class Solution { public int removeElement(int[] nums, int val) { int left = 0; int right = nums.length - 1; while (left  right){ if (nums[left] == val) { nums[left] = nums[right]; right--; } else { left++; } } return left; } } ",
   "wordCount" : "315",
   "inLanguage": "en",
   "datePublished": "2022-02-23T19:20:29+08:00",
@@ -340,22 +340,22 @@ for (int i = 0; i &lt; len; i++) {
 <li>如果左指针指向的元素不等于val，左指针右移一位
 左指针就是数组的长度。</li>
 </ul>
-<pre tabindex="0"><code>class Solution {
-    public int removeElement(int[] nums, int val) {
-        int left = 0;
-        int right = nums.length - 1;
-        while (left &lt;= right){
-            if (nums[left] == val) {
-                nums[left] = nums[right];
-                right--;
-            } else {
-                left++;
-            }
-        }
-        return left;
-    }
-}
-</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">removeElement</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> nums<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> val<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">int</span> left <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">int</span> right <span style="color:#f92672">=</span> nums<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> 1<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">while</span> <span style="color:#f92672">(</span>left <span style="color:#f92672">&lt;=</span> right<span style="color:#f92672">){</span>
+            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>nums<span style="color:#f92672">[</span>left<span style="color:#f92672">]</span> <span style="color:#f92672">==</span> val<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                nums<span style="color:#f92672">[</span>left<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> nums<span style="color:#f92672">[</span>right<span style="color:#f92672">];</span>
+                right<span style="color:#f92672">--;</span>
+            <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+                left<span style="color:#f92672">++;</span>
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#66d9ef">return</span> left<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div>
 
   </div>
 

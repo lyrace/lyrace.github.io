@@ -9,7 +9,24 @@
       <link>https://lyrace.github.io/papermod-cover.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 25 Feb 2022 11:52:31 +0800</lastBuildDate><atom:link href="https://lyrace.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 25 Feb 2022 19:20:32 +0800</lastBuildDate><atom:link href="https://lyrace.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode26</title>
+      <link>https://lyrace.github.io/post/leetcode26/</link>
+      <pubDate>Fri, 25 Feb 2022 19:20:32 +0800</pubDate>
+      
+      <guid>https://lyrace.github.io/post/leetcode26/</guid>
+      <description>26.删除有序数组中的重复项 题目链接
+给你一个升序排列的数组 nums ，请你原地删除重复出现的元素，使每个元素只出现一次 ，返回删除后数组的新长度。元素的相对顺序应该保持 一致 。
+由于在某些语言中不能改变数组的长度，所以必须将结果放在数组nums的第一部分。更规范地说，如果在删除重复项之后有 k 个元素，那么 nums 的前 k 个元素应该保存最终结果。
+将最终结果插入 nums 的前 k 个位置后返回 k 。
+不要使用额外的空间，你必须在原地修改输入数组 并在使用O(1)额外空间的条件下完成。
+判题标准:
+系统会用下面的代码来测试你的题解:
+int[] nums = [...]; // 输入数组 int[] expectedNums = [...]; // 长度正确的期望答案 int k = removeDuplicates(nums); // 调用 assert k == expectedNums.length; for (int i = 0; i &amp;lt; k; i++) { assert nums[i] == expectedNums[i]; } 示例1：
+输入：nums = [1,1,2] 输出：2, nums = [1,2,_] 解释：函数应该返回新的长度 2 ，并且原数组 nums 的前两个元素被修改为 1, 2 。不需要考虑数组中超出新长度后面的元素。 示例2：</description>
+    </item>
+    
     <item>
       <title>【Java笔记】15.final</title>
       <link>https://lyrace.github.io/post/java15/</link>

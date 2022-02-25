@@ -134,6 +134,26 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>Leetcode26
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>26.删除有序数组中的重复项 题目链接
+给你一个升序排列的数组 nums ，请你原地删除重复出现的元素，使每个元素只出现一次 ，返回删除后数组的新长度。元素的相对顺序应该保持 一致 。
+由于在某些语言中不能改变数组的长度，所以必须将结果放在数组nums的第一部分。更规范地说，如果在删除重复项之后有 k 个元素，那么 nums 的前 k 个元素应该保存最终结果。
+将最终结果插入 nums 的前 k 个位置后返回 k 。
+不要使用额外的空间，你必须在原地修改输入数组 并在使用O(1)额外空间的条件下完成。
+判题标准:
+系统会用下面的代码来测试你的题解:
+int[] nums = [...]; // 输入数组 int[] expectedNums = [...]; // 长度正确的期望答案 int k = removeDuplicates(nums); // 调用 assert k == expectedNums.length; for (int i = 0; i &lt; k; i&#43;&#43;) { assert nums[i] == expectedNums[i]; } 示例1：
+输入：nums = [1,1,2] 输出：2, nums = [1,2,_] 解释：函数应该返回新的长度 2 ，并且原数组 nums 的前两个元素被修改为 1, 2 。不需要考虑数组中超出新长度后面的元素。 示例2：...</p>
+  </section>
+  <footer class="entry-footer"><span title='2022-02-25 19:20:32 +0800 CST'>February 25, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Theme PaperMod</footer>
+  <a class="entry-link" aria-label="post link to Leetcode26" href="https://lyrace.github.io/post/leetcode26/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>【Leetcode】27.移除元素
     </h2>
   </header>
@@ -212,27 +232,6 @@ class Solution{ int[] searchRange(int[] nums, int target) { // target的左边�
   </section>
   <footer class="entry-footer"><span title='2022-01-30 17:08:25 +0800 CST'>January 30, 2022</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Theme PaperMod</footer>
   <a class="entry-link" aria-label="post link to 【LeetCode】34. 在排序数组中查找元素的第一个和最后一个位置" href="https://lyrace.github.io/post/leetcode34/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【LeetCode】35.搜索插入位置
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>35.搜索插入位置 题目链接
-给定一个排序数组和一个目标值，在数组中找到目标值，并返回其索引。如果目标值不存在于数组中，返回它将会被按顺序插入的位置。
-请必须使用时间复杂度为O(log n)的算法。
-示例1：
-输入: nums = [1,3,5,6], target = 5 输出: 2 示例2：
-输入: nums = [1,3,5,6], target = 2 输出: 1 示例3：
-输入: nums = [1,3,5,6], target = 7 输出: 4 示例4：
-输入: nums = [1,3,5,6], target = 0 输出: 0 示例5：
-输入: nums = [1], target = 0 输出: 0 提示：
- 1 &lt;= nums.length &lt;= 104 -104 &lt;= nums[i] &lt;= 104 nums 为无重复元素的升序排列数组 -104 &lt;= target &lt;= 104  二分法 class Solution { public int searchInsert(int[] nums, int target) { int left = 0; int right = nums....</p>
-  </section>
-  <footer class="entry-footer"><span title='2022-01-30 08:08:25 +0800 CST'>January 30, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Theme PaperMod</footer>
-  <a class="entry-link" aria-label="post link to 【LeetCode】35.搜索插入位置" href="https://lyrace.github.io/post/leetcode35/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

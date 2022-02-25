@@ -149,6 +149,22 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>【Java笔记】09 面向对象
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>【Java笔记】09 面向对象 一、类与对象  属性 成员属性=属性=field	访问修饰符 属性类型 属性名； 访问修饰符：public protected 默认 private 属性不赋值有默认值，跟数组默认值相同 方法（成员方法） 当程序执行到方法时，开辟一个独立的栈空间； 执行完毕，或者到return语句时，返回； 返回到调用方法的语句，继续执行后面的代码 方法的定义： 访问修饰符 返回数据类型 方法名（形参列表..）{//方法体 语句； return 返回值； }  同一个类中的方法调用，直接调用即可，不需要创建对象
+class A{ //同一个类中的方法调用，直接调用即可，不需要创建对象 	pubilc void print(int n){ System.out.println(&#34;输出&#34;); } public void test(){ print(); } } 跨类中的方法调用：A类调用B类方法，需要通过对象名调用。即创建B类的对象，再调用方法
+二、方法重载 java中允许同一个类中，多个同名方法的存在，但要求形参列表不一致 方法名：必须相同 形参列表：必须不同（形参类型或个数或顺序，至少有一样不同，参数名无要求） 返回类型：无要求
+三、可变参数 java允许将同一个类中多个同名同功能但参数个数不同的方法，封装成一个方法 可变参数的实参可以为0个或任意多个 可变参数的实参可以为数组 可变参数的本质就是数组 可变参数可以和普通类型的参数一起放在形参列表，但必须保证可变参数在最后 一个形参列表中最多只能出现一个可变参数
+public class VarParameter{ public static void main(String[] args){ //求2个、3个、4个...参数的和 	HspMethod m = new HspMethod(); System....</p>
+  </section>
+  <footer class="entry-footer"><span title='2022-01-21 00:43:49 +0800 CST'>January 21, 2022</span>&nbsp;·&nbsp;7 min&nbsp;·&nbsp;Theme PaperMod</footer>
+  <a class="entry-link" aria-label="post link to 【Java笔记】09 面向对象" href="https://lyrace.github.io/post/java9/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>【Java笔记】08数组
     </h2>
   </header>
@@ -203,20 +219,6 @@ import java.util.Scanner; public class Input{ public static void main(String[] a
   </section>
   <footer class="entry-footer"><span title='2022-01-21 00:40:08 +0800 CST'>January 21, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Theme PaperMod</footer>
   <a class="entry-link" aria-label="post link to 【Java笔记】05 键盘输入" href="https://lyrace.github.io/post/java5/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>【Java笔记】04 运算符
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>【Java笔记】04 运算符 一、算数运算符 运算符：&#43;（正号）、-（负号）、&#43;、-、*、/、%、&#43;&#43;、–、 &#43;（字符串相加） 1./
-System.out.println(10 / 4); //2 	System.out.println(10.0 / 4); //2.5 	double d = 10 / 4;//2.0 2.% 取模，取余 %运算， a % b = a - a / b * b 10%3=1	//10-10/33=1 -10%3=-1	//(-10)-(-10)/33=-1 10%-3=1	//10-10/(-3)(-3)=1 %运算，a是小数的情况下， a % b = a - (int)a / b * b -10.5%3 = -10.5 - (-10)/33 = -10.5&#43;9=-1.5 3.&#43;&#43;
- 作为独立语句 i&#43;&#43;;//自增，等价于 i=i&#43;1； &#43;&#43;i;//自增，等价于i=i&#43;1; 作为表达式使用 前&#43;&#43;：&#43;&#43;i先自增，后赋值 后&#43;&#43;：i&#43;&#43;先赋值，后自增  int i = 8; int k = &#43;&#43;i;//i=i&#43;1;k=i; 	System....</p>
-  </section>
-  <footer class="entry-footer"><span title='2022-01-21 00:40:06 +0800 CST'>January 21, 2022</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Theme PaperMod</footer>
-  <a class="entry-link" aria-label="post link to 【Java笔记】04 运算符" href="https://lyrace.github.io/post/java4/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

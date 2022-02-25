@@ -134,6 +134,35 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>【Java笔记】10 递归
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>【Java笔记】10 递归 猴子吃桃 有一堆桃子，猴子第一天吃了其中的一半，并再多吃了一个。以后每天猴子都吃其中的一半，然后再多吃一个。当到第10天时，想再吃时，发现只有一个桃子了。问：最初共多少个桃子？
+public calss Recursion{ public static void main(String[] args){ T t1 = new T(); int day = 0; int peachNum = t1.peach(day); if(peachNum != -1){ System.out.println(&#34;第&#34;&#43;day&#43;&#34;天有&#34;&#43;peachNum&#43;&#34;个桃子&#34;); } } } class T{ /* 1.day=10时 有1个桃子 2.day=9时 有(day10&#43;1)*2=4 3.day=8时 有(day9&#43;1)*2=10 前一天的桃子=(后一天的桃子&#43;1)*2 */ public int peach(int day){ if(day == 10){//第10天，只有1个桃  return 1; }else if(day &gt;= 1&amp;&amp;day &lt;= 9){ return (peach(day&#43;1)&#43;1)*2; }else{ System.out.println(&#34;day在1-10&#34;); return -1; } } } 迷宫问题 public class MiGong{ public static void main(String[] args){ //先创建迷宫，用二维数组表示 int[][] map=new int[8][7]; 	//先规定map数组的元素值：0表示可以走 1表示障碍物 	int[][] map = new int[8][7]; //设置障碍物 	for(int i = 0;i &lt; 7;i&#43;&#43;){ map[0][i] = 1; map[7][i] = 1; } for(int i = 0;i &lt; 8;i&#43;&#43;){ map[i][0] = 1; map[i][6] = 1; } //输出当前的地图 	System....</p>
+  </section>
+  <footer class="entry-footer"><span title='2022-01-21 00:43:56 +0800 CST'>January 21, 2022</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Theme PaperMod</footer>
+  <a class="entry-link" aria-label="post link to 【Java笔记】10 递归" href="https://lyrace.github.io/post/java10/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【Java笔记】09 面向对象
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>【Java笔记】09 面向对象 一、类与对象  属性 成员属性=属性=field	访问修饰符 属性类型 属性名； 访问修饰符：public protected 默认 private 属性不赋值有默认值，跟数组默认值相同 方法（成员方法） 当程序执行到方法时，开辟一个独立的栈空间； 执行完毕，或者到return语句时，返回； 返回到调用方法的语句，继续执行后面的代码 方法的定义： 访问修饰符 返回数据类型 方法名（形参列表..）{//方法体 语句； return 返回值； }  同一个类中的方法调用，直接调用即可，不需要创建对象
+class A{ //同一个类中的方法调用，直接调用即可，不需要创建对象 	pubilc void print(int n){ System.out.println(&#34;输出&#34;); } public void test(){ print(); } } 跨类中的方法调用：A类调用B类方法，需要通过对象名调用。即创建B类的对象，再调用方法
+二、方法重载 java中允许同一个类中，多个同名方法的存在，但要求形参列表不一致 方法名：必须相同 形参列表：必须不同（形参类型或个数或顺序，至少有一样不同，参数名无要求） 返回类型：无要求
+三、可变参数 java允许将同一个类中多个同名同功能但参数个数不同的方法，封装成一个方法 可变参数的实参可以为0个或任意多个 可变参数的实参可以为数组 可变参数的本质就是数组 可变参数可以和普通类型的参数一起放在形参列表，但必须保证可变参数在最后 一个形参列表中最多只能出现一个可变参数
+public class VarParameter{ public static void main(String[] args){ //求2个、3个、4个...参数的和 	HspMethod m = new HspMethod(); System....</p>
+  </section>
+  <footer class="entry-footer"><span title='2022-01-21 00:43:49 +0800 CST'>January 21, 2022</span>&nbsp;·&nbsp;7 min&nbsp;·&nbsp;Theme PaperMod</footer>
+  <a class="entry-link" aria-label="post link to 【Java笔记】09 面向对象" href="https://lyrace.github.io/post/java9/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>【Java笔记】08数组
     </h2>
   </header>
@@ -175,33 +204,6 @@ int n1 = 0b1010;//二进制，10 	int n2 = 1010;//十进制，1010 	int n3 = 010
   </section>
   <footer class="entry-footer"><span title='2022-01-21 00:40:09 +0800 CST'>January 21, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Theme PaperMod</footer>
   <a class="entry-link" aria-label="post link to 【Java笔记】06 进制" href="https://lyrace.github.io/post/java6/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【Java笔记】05 键盘输入
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>【Java笔记】05 键盘输入 键盘输入语句 扫描器 Scanner	java.util.* 1.导入该类所在的包 2.创建Scanner对象
-import java.util.Scanner; public class Input{ public static void main(String[] args){ Scanner myScanner = new Scanner(System.in); //执行到next方法时，会等待用户输入 	String name = myScanner.next();//接收用户输入字符串 	int age = myScanner.nextInt(); double sal = myScanner.nextDouble(); } } </p>
-  </section>
-  <footer class="entry-footer"><span title='2022-01-21 00:40:08 +0800 CST'>January 21, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Theme PaperMod</footer>
-  <a class="entry-link" aria-label="post link to 【Java笔记】05 键盘输入" href="https://lyrace.github.io/post/java5/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【Java笔记】04 运算符
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>【Java笔记】04 运算符 一、算数运算符 运算符：&#43;（正号）、-（负号）、&#43;、-、*、/、%、&#43;&#43;、–、 &#43;（字符串相加） 1./
-System.out.println(10 / 4); //2 	System.out.println(10.0 / 4); //2.5 	double d = 10 / 4;//2.0 2.% 取模，取余 %运算， a % b = a - a / b * b 10%3=1	//10-10/33=1 -10%3=-1	//(-10)-(-10)/33=-1 10%-3=1	//10-10/(-3)(-3)=1 %运算，a是小数的情况下， a % b = a - (int)a / b * b -10.5%3 = -10.5 - (-10)/33 = -10.5&#43;9=-1.5 3.&#43;&#43;
- 作为独立语句 i&#43;&#43;;//自增，等价于 i=i&#43;1； &#43;&#43;i;//自增，等价于i=i&#43;1; 作为表达式使用 前&#43;&#43;：&#43;&#43;i先自增，后赋值 后&#43;&#43;：i&#43;&#43;先赋值，后自增  int i = 8; int k = &#43;&#43;i;//i=i&#43;1;k=i; 	System....</p>
-  </section>
-  <footer class="entry-footer"><span title='2022-01-21 00:40:06 +0800 CST'>January 21, 2022</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Theme PaperMod</footer>
-  <a class="entry-link" aria-label="post link to 【Java笔记】04 运算符" href="https://lyrace.github.io/post/java4/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

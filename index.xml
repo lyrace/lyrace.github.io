@@ -9,7 +9,35 @@
       <link>https://lyrace.github.io/papermod-cover.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 23 Feb 2022 19:20:29 +0800</lastBuildDate><atom:link href="https://lyrace.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 25 Feb 2022 11:52:31 +0800</lastBuildDate><atom:link href="https://lyrace.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【Java笔记】15.final</title>
+      <link>https://lyrace.github.io/post/java15/</link>
+      <pubDate>Fri, 25 Feb 2022 11:52:31 +0800</pubDate>
+      
+      <guid>https://lyrace.github.io/post/java15/</guid>
+      <description>final 一、介绍 final可以修饰类、属性、方法和局部变量
+使用final:
+  不希望类被继承时
+final class A{} // class B extends A{} 此时A类不能被继承   不希望父类的某个方法被子类覆盖/重写时
+class C{ // 要求hi不能被子类重写，可以使用final修饰hi方法  public final void hi(){} } class D extends C{ //此时不能重写hi()方法 // @Override // public void hi(){ // System.out.println(&amp;#34;重写&amp;#34;); // } }   不希望类的某个属性的值被修改
+public class final_ { public static void main(String[] args) { E e = new E(); // e.TAX_RATE = 0.09; 此时不能更改  } } class E{ public final double TAX_RATE = 0.</description>
+    </item>
+    
+    <item>
+      <title>【Java笔记】14.单例设计模式</title>
+      <link>https://lyrace.github.io/post/java14/</link>
+      <pubDate>Fri, 25 Feb 2022 11:12:45 +0800</pubDate>
+      
+      <guid>https://lyrace.github.io/post/java14/</guid>
+      <description>单例设计模式 一、什么是单例设计模式  采取一定的方法保证在整个的软件系统中，对某个类只能存在一个对象实例，并且该类只提供一个取得其对象实例的方法 两种方式：饿汉式和懒汉式  二、饿汉式 类加载时创建，不存在线程安全问题
+  构造器私有化，防止直接new
+  类的内部创建对象 static
+  向外暴露一个静态的公共方法
+  饿汉式可能造成创建了对象但是没有使用
+public class SingleTon01 { public static void main(String[] args) { A a = A.getInstance(); //通过方法获取对象  } } class A{ private String name; // 2. 在类的内部直接创建,此时外部不可用  private static A a = new A(&amp;#34;aaa&amp;#34;); // 保证只能创建一个对象  // 1. 将构造器私有化  private A(String name){ this.name = name; } // 3.</description>
+    </item>
+    
     <item>
       <title>【Leetcode】27.移除元素</title>
       <link>https://lyrace.github.io/post/leetcode27/</link>

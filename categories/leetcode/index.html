@@ -134,7 +134,29 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
-    <h2>Leetcode26
+    <h2>【Leetcode】283.移动零
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>283.移动零 题目链接
+给定一个数组 nums，编写一个函数将所有 0 移动到数组的末尾，同时保持非零元素的相对顺序。
+请注意 ，必须在不复制数组的情况下原地对数组进行操作。
+示例1：
+输入: nums = [0,1,0,3,12] 输出: [1,3,12,0,0] 示例2：
+输入: nums = [0] 输出: [0] 提示：
+ 1 &lt;= nums.length &lt;= 10^4^ -2^31^ &lt;= nums[i] &lt;= 2^31^ - 1  解 fast指针遍历
+fast指针位置不为0时，把fast位置的元素赋值给slow位置
+fast指针为0时，代表数组中有一个0元素
+将slow-&gt;结尾的元素赋值0
+class Solution { public void moveZeroes(int[] nums) { int slow = 0; int n = nums.length; for (int fast = 0; fast &lt; nums.length; fast&#43;&#43;) { if (nums[fast] !...</p>
+  </section>
+  <footer class="entry-footer"><span title='2022-02-26 18:01:08 +0800 CST'>February 26, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Theme PaperMod</footer>
+  <a class="entry-link" aria-label="post link to 【Leetcode】283.移动零" href="https://lyrace.github.io/post/leetcode283/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【Leetcode】26删除有序数组中的重复项
     </h2>
   </header>
   <section class="entry-content">
@@ -149,7 +171,7 @@ int[] nums = [...]; // 输入数组 int[] expectedNums = [...]; // 长度正确�
 输入：nums = [1,1,2] 输出：2, nums = [1,2,_] 解释：函数应该返回新的长度 2 ，并且原数组 nums 的前两个元素被修改为 1, 2 。不需要考虑数组中超出新长度后面的元素。 示例2：...</p>
   </section>
   <footer class="entry-footer"><span title='2022-02-25 19:20:32 +0800 CST'>February 25, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Theme PaperMod</footer>
-  <a class="entry-link" aria-label="post link to Leetcode26" href="https://lyrace.github.io/post/leetcode26/"></a>
+  <a class="entry-link" aria-label="post link to 【Leetcode】26删除有序数组中的重复项" href="https://lyrace.github.io/post/leetcode26/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 
@@ -208,30 +230,6 @@ int[] nums = [...]; // 输入数组 int[] expectedNums = [...]; // 长度正确�
   </section>
   <footer class="entry-footer"><span title='2022-02-13 12:26:32 +0800 CST'>February 13, 2022</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Theme PaperMod</footer>
   <a class="entry-link" aria-label="post link to 【LeetCode】69.x的平方根(未完)" href="https://lyrace.github.io/post/leetcode69/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【LeetCode】34. 在排序数组中查找元素的第一个和最后一个位置
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>34.在排序数组中查找元素的第一个和最后一个位置 题目链接
-给定一个按照升序排列的整数数组 nums，和一个目标值 target。找出给定目标值在数组中的开始位置和结束位置。
-如果数组中不存在目标值 target，返回 [-1, -1]。
-示例1：
-输入：nums = [5,7,7,8,8,10], target = 8 输出：[3,4] 示例2：
-输入：nums = [5,7,7,8,8,10], target = 6 输出：[-1,-1] 示例3：
-输入：nums = [], target = 0 输出：[-1,-1] 提示：
-  0 &lt;= nums.length &lt;= 10^5^
-  -10^9^ &lt;= nums[i] &lt;= 10^9^
-  nums 是一个非递减数组
-  -10^9^ &lt;= target &lt;= 10^9^
-  二分查找 分三种情况讨论，且在二分查找是，nums[mid]==target时仍更新，才能保证取到的是边界值
-class Solution{ int[] searchRange(int[] nums, int target) { // target的左边界 比target小的那个  int leftBorder = getLeftBorder(nums, target); // target的右边界 比target大的那个  int rightBorder = getRightBorder(nums, target); // 情况一  // target 在数组范围的右边或者左边，例如数组{3, 4, 5}，target为2或者数组{3, 4, 5},target为6，此时应该返回{-1, -1}  if (leftBorder == -2 || rightBorder == -2) return new int[]{-1, -1}; // 情况三  // target 在数组范围中，且数组中存在target，例如数组{3,6,7},target为6，此时应该返回{1, 1}  if (rightBorder - leftBorder &gt; 1) return new int[]{leftBorder &#43; 1, rightBorder - 1}; // 情况二  // target 在数组范围中，且数组中不存在target，例如数组{3,6,7},target为5，此时应该返回{-1, -1}  return new int[]{-1, -1}; } // 寻找target的右边界  int getRightBorder(int[] nums, int target) { int left = 0; int right = nums....</p>
-  </section>
-  <footer class="entry-footer"><span title='2022-01-30 17:08:25 +0800 CST'>January 30, 2022</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Theme PaperMod</footer>
-  <a class="entry-link" aria-label="post link to 【LeetCode】34. 在排序数组中查找元素的第一个和最后一个位置" href="https://lyrace.github.io/post/leetcode34/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

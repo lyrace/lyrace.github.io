@@ -134,6 +134,23 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>【Java笔记】15.final
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>final 一、介绍 final可以修饰类、属性、方法和局部变量
+使用final:
+  不希望类被继承时
+final class A{} // class B extends A{} 此时A类不能被继承   不希望父类的某个方法被子类覆盖/重写时
+class C{ // 要求hi不能被子类重写，可以使用final修饰hi方法  public final void hi(){} } class D extends C{ //此时不能重写hi()方法 // @Override // public void hi(){ // System.out.println(&#34;重写&#34;); // } }   不希望类的某个属性的值被修改
+public class final_ { public static void main(String[] args) { E e = new E(); // e.TAX_RATE = 0.09; 此时不能更改  } } class E{ public final double TAX_RATE = 0....</p>
+  </section>
+  <footer class="entry-footer"><span title='2022-02-25 11:52:31 +0800 CST'>February 25, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Theme PaperMod</footer>
+  <a class="entry-link" aria-label="post link to 【Java笔记】15.final" href="https://lyrace.github.io/post/java15/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>【Java笔记】14.单例设计模式
     </h2>
   </header>
@@ -207,24 +224,6 @@ IDEA中传参数
   </section>
   <footer class="entry-footer"><span title='2022-02-22 09:28:56 +0800 CST'>February 22, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Theme PaperMod</footer>
   <a class="entry-link" aria-label="post link to 【Java笔记】12.main" href="https://lyrace.github.io/post/java12/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【Leetcode】367.有效的完全平方数
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>367.有效的完全平方数 题目链接
-给定一个 正整数 num ，编写一个函数，如果 num 是一个完全平方数，则返回 true ，否则返回 false 。
-进阶：不要 使用任何内置的库函数，如 sqrt 。
-示例1：
-输入：num = 16 输出：true 示例2：
-输入：num = 14 输出：false 提示：
- 1 &lt;= num &lt;= 2^31^ - 1  二分查找 class Solution { public boolean isPerfectSquare(int num) { int left = 1; int right = num; int mid = left &#43; (right - left) / 2; while(left &lt;= right){ if((long)mid * mid == num){ return true; }else if((long)mid * mid &lt; num){ left = mid &#43; 1; }else{ right = mid -1; } mid = left &#43; (right - left) / 2; } return false; } }  乘法可能会越界，强转一下...</p>
-  </section>
-  <footer class="entry-footer"><span title='2022-02-21 20:14:42 +0800 CST'>February 21, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Theme PaperMod</footer>
-  <a class="entry-link" aria-label="post link to 【Leetcode】367.有效的完全平方数" href="https://lyrace.github.io/post/leetcode367/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

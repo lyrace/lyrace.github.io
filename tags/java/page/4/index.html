@@ -134,6 +134,23 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>【LeetCode】704.二分查找
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>704.二分查找 题目链接
+给定一个 n 个元素有序的（升序）整型数组 nums 和一个目标值 target ，写一个函数搜索 nums 中的 target，如果目标值存在返回下标，否则返回 -1。
+示例1：
+输入: nums = [-1,0,3,5,9,12], target = 9 输出: 4 解释: 9 出现在 nums 中并且下标为 4 示例2：
+输入: nums = [-1,0,3,5,9,12], target = 2 输出: -1 解释: 2 不存在 nums 中因此返回 -1 提示：
+ 你可以假设 nums 中的所有元素是不重复的。 n 将在 [1, 10000]之间。 nums 的每个元素都将在 [-9999, 9999]之间。  二分查找 class Solution { public int search(int[] nums, int target) { int left = 0; int right = nums....</p>
+  </section>
+  <footer class="entry-footer"><span title='2022-01-30 08:08:25 +0800 CST'>January 30, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Theme PaperMod</footer>
+  <a class="entry-link" aria-label="post link to 【LeetCode】704.二分查找" href="https://lyrace.github.io/post/leetcode704/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>【LeetCode】4.寻找两个正序数组的中位数（未完）
     </h2>
   </header>
@@ -199,22 +216,6 @@ public class VarParameter{ public static void main(String[] args){ //求2个、3
   </section>
   <footer class="entry-footer"><span title='2022-01-21 00:43:49 +0800 CST'>January 21, 2022</span>&nbsp;·&nbsp;7 min&nbsp;·&nbsp;Theme PaperMod</footer>
   <a class="entry-link" aria-label="post link to 【Java笔记】09 面向对象" href="https://lyrace.github.io/post/java9/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【Java笔记】08数组
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>【Java笔记】08数组 一、介绍 数组存放多个同一类型的数据，是引用类型
- 数组的定义 数据类型[] 数组名 = new 数据类型[大小] int[] a = new int[5];  先声明，再创建 声明：数据类型 数组名[]；或 数据类型[] 数组名；此时为null 创建：数组名=new 数据类型[大小];
-静态初始化 数据类型 数组名[]={元素值，元素值,…}
- 注意 1.数组创建后，如果没有赋值，有默认值 int 0,short 0,byte 0,long 0 ,float 0.0,double 0.0,char \u0000,boolean false，String null 2.数组属引用类型，数组型数据是对象（object）  二、数组赋值机制 数组在默认情况下是引用传递，赋的值是地址——&gt;赋值方式为引用传递
-//arr2变化会影响到arr1 	int[] arr1 = {1,2,3}; int[] arr2 = arr1; arr2[0] = 10; //arr1={10,2,3} 三、应用 排序  内部排序：所有数据加载到内存 外部排序：借助外部存储   冒泡排序 通过对待排序序列从后向前（从下标较大的元素开始），依次比较相邻元素 的值，若发现逆序则交换，使值较大的元素逐渐从前移向后部  //数组[24,69,80,57,13] //第一轮 最大数放最后 24,69,80,57,13-&gt;24,69,80,57,13-&gt;24,69,57,80,13-&gt;24,69,57,13,80  //第二轮 第二大的数放在倒数第二位置 24,69,57,13,80-&gt;24 57 69 13 80-&gt;24 57 13 69 80  //第三轮 第三大的数放在倒数第三位置 24 57 13 69 80-&gt;24 13 57 69 80  //第四轮 第四大的数放在倒数第四位置 13 24 57 69 80 public class BubbleSort { public static void main(String []args) { int[] arr = {24,69,80,57,13}; int temp = 0; for(int i=0;i&lt;arr....</p>
-  </section>
-  <footer class="entry-footer"><span title='2022-01-21 00:43:44 +0800 CST'>January 21, 2022</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Theme PaperMod</footer>
-  <a class="entry-link" aria-label="post link to 【Java笔记】08数组" href="https://lyrace.github.io/post/java8/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

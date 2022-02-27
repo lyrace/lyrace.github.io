@@ -145,6 +145,24 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>【Leetcode】367.有效的完全平方数
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>367.有效的完全平方数 题目链接
+给定一个 正整数 num ，编写一个函数，如果 num 是一个完全平方数，则返回 true ，否则返回 false 。
+进阶：不要 使用任何内置的库函数，如 sqrt 。
+示例1：
+输入：num = 16 输出：true 示例2：
+输入：num = 14 输出：false 提示：
+ 1 &lt;= num &lt;= 2^31^ - 1  二分查找 class Solution { public boolean isPerfectSquare(int num) { int left = 1; int right = num; int mid = left &#43; (right - left) / 2; while(left &lt;= right){ if((long)mid * mid == num){ return true; }else if((long)mid * mid &lt; num){ left = mid &#43; 1; }else{ right = mid -1; } mid = left &#43; (right - left) / 2; } return false; } }  乘法可能会越界，强转一下...</p>
+  </section>
+  <footer class="entry-footer"><span title='2022-02-21 20:14:42 +0800 CST'>February 21, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Theme PaperMod</footer>
+  <a class="entry-link" aria-label="post link to 【Leetcode】367.有效的完全平方数" href="https://lyrace.github.io/post/leetcode367/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>【LeetCode】69.x的平方根(未完)
     </h2>
   </header>
@@ -222,23 +240,6 @@ class Solution{ int[] searchRange(int[] nums, int target) { // target的左边�
   </section>
   <footer class="entry-footer"><span title='2022-01-30 08:08:25 +0800 CST'>January 30, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Theme PaperMod</footer>
   <a class="entry-link" aria-label="post link to 【LeetCode】35.搜索插入位置" href="https://lyrace.github.io/post/leetcode35/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>【LeetCode】704.二分查找
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>704.二分查找 题目链接
-给定一个 n 个元素有序的（升序）整型数组 nums 和一个目标值 target ，写一个函数搜索 nums 中的 target，如果目标值存在返回下标，否则返回 -1。
-示例1：
-输入: nums = [-1,0,3,5,9,12], target = 9 输出: 4 解释: 9 出现在 nums 中并且下标为 4 示例2：
-输入: nums = [-1,0,3,5,9,12], target = 2 输出: -1 解释: 2 不存在 nums 中因此返回 -1 提示：
- 你可以假设 nums 中的所有元素是不重复的。 n 将在 [1, 10000]之间。 nums 的每个元素都将在 [-9999, 9999]之间。  二分查找 class Solution { public int search(int[] nums, int target) { int left = 0; int right = nums....</p>
-  </section>
-  <footer class="entry-footer"><span title='2022-01-30 08:08:25 +0800 CST'>January 30, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Theme PaperMod</footer>
-  <a class="entry-link" aria-label="post link to 【LeetCode】704.二分查找" href="https://lyrace.github.io/post/leetcode704/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
